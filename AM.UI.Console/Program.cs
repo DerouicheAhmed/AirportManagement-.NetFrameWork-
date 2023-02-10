@@ -1,0 +1,63 @@
+﻿// See https://aka.ms/new-console-template for more information
+using AM.ApplicationCore.Domain;
+//string chaine=Console.ReadLine();
+//float age=0;
+//try
+//{
+// age = float.Parse(Console.ReadLine());
+//}
+//catch
+//{
+//    Console.WriteLine("Erreur");
+//}
+//Console.WriteLine("Hello"+chaine+"age:"+(age+1));
+//Personne p = new Personne();
+//p.Id = 0;
+//p.Nom = "foulen";
+//p.Prenom = "foulen";
+//p.Email = "foulen.foulen@gmail.com";
+//p.Password= "00000";
+//p.DateDeNaissance = DateTime.Now;
+//Console.WriteLine(p);
+//Personne p1= new Personne("Derouiche","Ahmed","ahmed.derouiche@esprit.tn","1234",DateTime.Now);
+//Console.WriteLine(p1);
+//Personne p2 = new Personne() { 
+//Nom="Abbes",
+//Prenom="Malek",
+//Email="Malek.abbes@gmail.com",
+//Password="111111",
+//DateDeNaissance=DateTime.Now
+//};
+//Console.WriteLine(p2);
+//Etudiant etudiant = new Etudiant();
+//etudiant.GetMyType();
+//p.GetMyType();
+//Personne etudiant1 = new Etudiant();
+//etudiant1.GetMyType();
+Plane p1 = new Plane();
+p1.Capacity = 300;
+p1.ManufactureDate = new DateTime(1998, 01, 18);
+p1.PlaneType = PlaneType.Airbus;
+Console.WriteLine(p1.ToString());
+Plane p2 = new Plane(PlaneType.Boing, 500, DateTime.Now);
+Console.WriteLine(p2.ToString());
+
+Plane p3 = new Plane
+{
+    Capacity = 500,
+    PlaneType = PlaneType.Airbus,
+    ManufactureDate = DateTime.Now
+};
+Console.WriteLine(p3.ToString());
+Passenger pass1 = new Passenger
+{
+    FirstName = "Fedi",
+    LastName = "Jellali",
+    EmailAddress = "fedi.jellali@esprit.tn"
+
+};
+Passenger sf1 = new Staff();
+Passenger tr1 = new Traveller();
+pass1.PassengerType();
+sf1.PassengerType();
+tr1.PassengerType();
