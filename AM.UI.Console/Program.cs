@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using AM.ApplicationCore.Domain;
+using AM.ApplicationCore.Services;
 //string chaine=Console.ReadLine();
 //float age=0;
 //try
@@ -61,3 +62,11 @@ Passenger tr1 = new Traveller();
 pass1.PassengerType();
 sf1.PassengerType();
 tr1.PassengerType();
+ServiceFlight sf = new ServiceFlight();
+sf.Flights = TestData.listFlights;
+Console.WriteLine("Les Dates des vols à Paris:");
+foreach (var item in sf.GetFlightDates2("Paris"))
+{
+    Console.WriteLine(item);
+}
+sf.GetFlights("Destination", "Madrid");
