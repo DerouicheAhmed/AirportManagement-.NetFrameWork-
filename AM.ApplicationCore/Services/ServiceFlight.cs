@@ -162,8 +162,30 @@ namespace AM.ApplicationCore.Services
             }
             return req;
         }
-        Action<Plane> FlightDetailsDel;
-        Func<string, double> DurationAverageDel;
+        /*Délgué pour appele n'importe quel fonction*/
+       public Action<Plane> FlightDetailsDel;
+       public Func<string, double> DurationAverageDel;
+
+        public ServiceFlight()
+        {
+            FlightDetailsDel = (plane)=>
+        {
+                var req = Flights
+                         .Where(f => f.MyPlane == plane)
+                         .Select(f => new { f.FlightDate, f.Destination });
+                foreach (var item in req)
+                {
+                    Console.WriteLine(item.Destination + " " + item.FlightDate);
+                }
+
+
+            };
+            DurationAverageDel = destination=>
+                           Flights
+                          .Where(f => f.Destination == destination)
+                          .Average(f => f.EstimatedDuration);
+            
+        }
 
     }
 }

@@ -35,38 +35,49 @@ using AM.ApplicationCore.Services;
 //p.GetMyType();
 //Personne etudiant1 = new Etudiant();
 //etudiant1.GetMyType();
-Plane p1 = new Plane();
-p1.Capacity = 300;
-p1.ManufactureDate = new DateTime(1998, 01, 18);
-p1.PlaneType = PlaneType.Airbus;
-Console.WriteLine(p1.ToString());
-Plane p2 = new Plane(PlaneType.Boing, 500, DateTime.Now);
-Console.WriteLine(p2.ToString());
+//Plane p1 = new Plane();
+//p1.Capacity = 300;
+//p1.ManufactureDate = new DateTime(1998, 01, 18);
+//p1.PlaneType = PlaneType.Airbus;
+//Console.WriteLine(p1.ToString());
+//Plane p2 = new Plane(PlaneType.Boing, 500, DateTime.Now);
+//Console.WriteLine(p2.ToString());
 
-Plane p3 = new Plane
-{
-    Capacity = 500,
-    PlaneType = PlaneType.Airbus,
-    ManufactureDate = DateTime.Now
-};
-Console.WriteLine(p3.ToString());
-Passenger pass1 = new Passenger
-{
-    FirstName = "Fedi",
-    LastName = "Jellali",
-    EmailAddress = "fedi.jellali@esprit.tn"
+//Plane p3 = new Plane
+//{
+//    Capacity = 500,
+//    PlaneType = PlaneType.Airbus,
+//    ManufactureDate = DateTime.Now
+//};
+//Console.WriteLine(p3.ToString());
+//Passenger pass1 = new Passenger
+//{
+//    FirstName = "Fedi",
+//    LastName = "Jellali",
+//    EmailAddress = "fedi.jellali@esprit.tn"
 
-};
-Passenger sf1 = new Staff();
-Passenger tr1 = new Traveller();
-pass1.PassengerType();
-sf1.PassengerType();
-tr1.PassengerType();
-ServiceFlight sf = new ServiceFlight();
-sf.Flights = TestData.listFlights;
-Console.WriteLine("Les Dates des vols à Paris:");
-foreach (var item in sf.GetFlightDates2("Paris"))
+//};
+//Passenger sf1 = new Staff();
+//Passenger tr1 = new Traveller();
+//pass1.PassengerType();
+//sf1.PassengerType();
+//tr1.PassengerType();
+//ServiceFlight sf = new ServiceFlight();
+//sf.Flights = TestData.listFlights;
+//Console.WriteLine("Les Dates des vols à Paris:");
+//foreach (var item in sf.GetFlightDates2("Paris"))
+//{
+//    Console.WriteLine(item);
+//}
+//sf.GetFlights("Destination", "Madrid");
+
+int x = 45;
+x.Add(5);
+Console.WriteLine(x.Add(5));
+Passenger passenger = new Passenger()
 {
-    Console.WriteLine(item);
-}
-sf.GetFlights("Destination", "Madrid");
+    LastName = "derouiche",
+    FirstName = "ahmed"
+};
+passenger.UpperFullName();
+Console.WriteLine(passenger);

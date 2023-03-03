@@ -39,5 +39,6 @@ namespace AM.ApplicationCore.Domain
             Console.WriteLine("I am a Passenger");
 
         }
+        
     }
 }
