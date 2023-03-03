@@ -9,12 +9,18 @@ namespace AM.ApplicationCore.Domain
 {
     public class Passenger
     {
+        [Display(Name ="Date Of Birth"),DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
         [Key]
+        [MaxLength(7)]
         public int PassportNumber { get; set; }
+        [DataType(DataType.EmailAddress)]
         public string? EmailAddress { get; set; }
+        [MinLength(3), MaxLength(25,ErrorMessage ="Les règles ne sont Pas respectés")]
+        
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
+        [MinLength(8), MaxLength(8)]
         public int TelNumber { get; set; }
         public ICollection<Flight> FlightList { get; set; }
         public override string ToString()

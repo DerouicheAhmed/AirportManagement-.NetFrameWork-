@@ -1,5 +1,7 @@
 ﻿    using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -14,8 +16,10 @@ namespace AM.ApplicationCore.Domain
     public class Plane
 
     {
+        [Range(0,int.MaxValue)]
         public int Capacity { get; set; }
         public DateTime ManufactureDate { get; set; }
+        [ForeignKey("PlaneId")]
         public int PlaneId { get; set; }
         public PlaneType PlaneType { get; set; }
         public ICollection<Flight> Flights { get; set; }
