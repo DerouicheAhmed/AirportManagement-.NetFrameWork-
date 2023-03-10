@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4Nv/yvonmTjVVNvAPE5PBf7yw2/r5FrPXOyHkA34ezgvrqUYFT87JaWdiL7zFJOqWffv6EXXz5CZke3pLtJmVA==",
+  "dgSpecHash": "nKIQqao+JXMCd1GhhdHgs0pzJDvqw1JCqzc0O09vCKCQBzUxTW0wdUr1ZE/5LYJwofyQTvJ8qmpREBJFhj9wEQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ahmed\\source\\repos\\AhmedDerouiche-4TWIN2\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Ahmed\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.3\\microsoft.entityframeworkcore.abstractions.7.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -76,8 +76,8 @@ x.Add(5);
 Console.WriteLine(x.Add(5));
 Passenger passenger = new Passenger()
 {
-    LastName = "derouiche",
-    FirstName = "ahmed"
+    //LastName = "derouiche",
+    //FirstName = "ahmed"
 };
 passenger.UpperFullName();
 Console.WriteLine(passenger);
