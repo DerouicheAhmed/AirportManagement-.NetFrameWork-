@@ -21,7 +21,9 @@ namespace AM.ApplicationCore.Domain
         public FullName fullname{ get; set; }
         [MinLength(8), MaxLength(8)]
         public int TelNumber { get; set; }
-        public ICollection<Flight> FlightList { get; set; }
+        public virtual ICollection<Flight> FlightList { get; set; }
+        public virtual IList<Ticket> TicketList { get; set; }
+        public virtual IList<Reservation> ReservationList { get; set; }
         public override string ToString()
         {
             return $"BirthDate: {BirthDate}, PassportNumber: {PassportNumber}, EmailAddress: {EmailAddress}, TelNumber: {TelNumber}";

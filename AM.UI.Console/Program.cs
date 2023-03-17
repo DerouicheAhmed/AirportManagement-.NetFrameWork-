@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using AM.ApplicationCore.Domain;
 using AM.ApplicationCore.Services;
+using AM.Infrastructure;
 //string chaine=Console.ReadLine();
 //float age=0;
 //try
@@ -81,3 +82,27 @@ Passenger passenger = new Passenger()
 };
 passenger.UpperFullName();
 Console.WriteLine(passenger);
+AmContexte contexte = new AmContexte();
+//contexte.Flights.Add(new Flight()
+//{
+//    EffectiveArrival = new DateTime(2023, 03, 17),
+//    Departure="Tunis",
+//    Destination="Germany",
+//    EstimatedDuration=2,
+//    FlightDate=new DateTime(2023,03,17),
+//    MyPlane=new Plane()
+//    {
+//        Capacity=30,
+//        ManufactureDate=new DateTime(2023,03,22),
+//        PlaneType=PlaneType.Boing
+//    }
+
+
+
+//});
+//contexte.SaveChanges();
+foreach (var item in contexte.Flights.ToList())
+{
+    Console.WriteLine("Departure:  "+item.Departure+"\nDestination: "+item.Destination+"\nPlane Capacity: "+item.MyPlane.Capacity);
+} 
+

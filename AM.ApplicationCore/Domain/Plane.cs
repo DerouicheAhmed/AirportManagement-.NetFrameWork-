@@ -22,7 +22,8 @@ namespace AM.ApplicationCore.Domain
         [ForeignKey("PlaneId")]
         public int PlaneId { get; set; }
         public PlaneType PlaneType { get; set; }
-        public ICollection<Flight> Flights { get; set; }
+        public virtual ICollection<Flight> Flights { get; set; }
+        public virtual IList<Seat> Seats { get; set; }
         public Plane() { }
         public Plane(PlaneType pt, int capacity, DateTime date)
         {

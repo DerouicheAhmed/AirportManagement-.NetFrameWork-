@@ -17,8 +17,10 @@ namespace AM.ApplicationCore.Domain
         public DateTime EffectiveArrival { get; set; }
         public int EstimatedDuration { get; set; }
        // [ForeignKey("PlaneID")]
-        public Plane? MyPlane { get; set; }
-        public ICollection<Passenger> PassengerList { get; set; }
+        public virtual Plane? MyPlane { get; set; }
+        public virtual ICollection<Passenger> PassengerList { get; set; }
+        public virtual IList<Ticket> TicketList { get; set; }
+
         [ForeignKey("MyPlane")]
         public int? PlaneID { get; set; }
            
