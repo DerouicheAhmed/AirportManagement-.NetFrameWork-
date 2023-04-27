@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Gxg2I9t+lsMRP4N/Pj+ol12D7MVUf3gwQYQ35+U0a8GBcOrG1Fq9JSLuOF1ogqbaMQJncbLPTsC5lnTuoJ06aA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ahmed\\source\\repos\\AhmedDerouiche-4TWIN2\\AM.UI.Web\\AM.UI.Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ahmed\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.3\\microsoft.entityframeworkcore.abstractions.7.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

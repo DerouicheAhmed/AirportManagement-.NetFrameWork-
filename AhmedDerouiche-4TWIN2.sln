@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AM.UI.Console", "AM.UI.Cons
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AM.ApplicationCore", "AM.ApplicationCore\AM.ApplicationCore.csproj", "{CBFDE676-FFA4-467F-A3A2-A22141D2FCF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AM.Infrastructure", "AM.Infrastructure\AM.Infrastructure.csproj", "{A661036F-56C4-41F0-8125-7F8196523C52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AM.Infrastructure", "AM.Infrastructure\AM.Infrastructure.csproj", "{A661036F-56C4-41F0-8125-7F8196523C52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AM.UI.Web", "AM.UI.Web\AM.UI.Web.csproj", "{C6B26FF4-FCD5-4AA2-9F43-B477366B3DF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{A661036F-56C4-41F0-8125-7F8196523C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A661036F-56C4-41F0-8125-7F8196523C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A661036F-56C4-41F0-8125-7F8196523C52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B26FF4-FCD5-4AA2-9F43-B477366B3DF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B26FF4-FCD5-4AA2-9F43-B477366B3DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B26FF4-FCD5-4AA2-9F43-B477366B3DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B26FF4-FCD5-4AA2-9F43-B477366B3DF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

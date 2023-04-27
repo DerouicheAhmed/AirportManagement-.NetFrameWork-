@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AM.ApplicationCore.Services
 {
-    public class ServiceFlight : IServiceFlight
+    public class ServiceFlight : Service<Flight>, IServiceFlight
     {
         public List<Flight> Flights { get; set; } = new List<Flight>();
         public IList<DateTime> GetFlightDates(string destination)
