@@ -13,22 +13,22 @@ namespace AM.ApplicationCore.Services
         public ServicePlane(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
-        public List<Passanger> GetPassenger(Plane plane)
+        public List<Passenger> GetPassenger(Plane plane)
         {
-            return GetById(plane.PlaneId).flights.SelectMany(f => f.ticket)
-                .Select(t => t.passangerProp).ToList();
+            return GetById(plane.PlaneId).Flights.SelectMany(f => f.TicketList)
+                .Select(t => t.passengerProp).ToList();
         }
         public List<Flight> GetFlights(int n)
         {
             //return GetById(plane.PlaneId).flights.OrderByDescending(f => f.FlightDate).Take(n).ToList();
-            return GetAll().SelectMany(p => p.flights).OrderByDescending(f => f.FlightDate).Take(n).ToList();
+            return GetAll().SelectMany(p => p.Flights).OrderByDescending(f => f.FlightDate).Take(n).ToList();
 
         }
         public Boolean IsAvailablePlane(Flight flight, int n)
         {
-            var plane_flight = GetById(flight.PlaneId);
-            var flight_plane = plane_flight.flights.Find(f => flight.FlightId == f.FlightId);
-            if (flight_plane.passangers.Count() + n <= plane_flight.Capacity) return true;
+            var plane_flight = GetById(flight.PlaneID);
+            var flight_plane = plane_flight.Flights.Where(f => flight.FlightId == f.FlightId).Single();
+            if (flight_plane.PassengerList.Count() + n <= plane_flight.Capacity) return true;
             else return false;
 
             //var plane = flight.plane;

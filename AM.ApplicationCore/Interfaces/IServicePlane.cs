@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AM.ApplicationCore.Interfaces
 {
-    public interface IServicePlane
+    public interface IServicePlane: IService<Plane>
     {
         List<Passenger> GetPassenger(Plane plane);
         List<Flight> GetFlights(int n);

@@ -17,7 +17,6 @@
   <ItemGroup>
     <ProjectReference Include="..\AM.ApplicationCore\AM.ApplicationCore.csproj" />
     <ProjectReference Include="..\AM.Infrastructure\AM.Infrastructure.csproj" />
-    <ProjectReference Include="..\AM.UI.Web\AM.UI.Web.csproj" />
   </ItemGroup>
 
 </Project>

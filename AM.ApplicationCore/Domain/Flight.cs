@@ -15,6 +15,9 @@ namespace AM.ApplicationCore.Domain
         public DateTime FlightDate { get; set; }
         public int FlightId { get; set; }
         public DateTime EffectiveArrival { get; set; }
+        public string? Pilot { get; set; }
+
+
         public int EstimatedDuration { get; set; }
        // [ForeignKey("PlaneID")]
         public virtual Plane? MyPlane { get; set; }

@@ -1231,22 +1231,6 @@
         "runtime": {
           "bin/placeholder/AM.Infrastructure.dll": {}
         }
-      },
-      "AM.UI.Web/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "AM.ApplicationCore": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/AM.UI.Web.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/AM.UI.Web.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
       }
     }
   },
@@ -3646,18 +3630,12 @@
       "type": "project",
       "path": "../AM.Infrastructure/AM.Infrastructure.csproj",
       "msbuildProject": "../AM.Infrastructure/AM.Infrastructure.csproj"
-    },
-    "AM.UI.Web/1.0.0": {
-      "type": "project",
-      "path": "../AM.UI.Web/AM.UI.Web.csproj",
-      "msbuildProject": "../AM.UI.Web/AM.UI.Web.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "AM.ApplicationCore >= 1.0.0",
       "AM.Infrastructure >= 1.0.0",
-      "AM.UI.Web >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.3"
     ]
   },
@@ -3693,9 +3671,6 @@
             },
             "C:\\Users\\Ahmed\\source\\repos\\AhmedDerouiche-4TWIN2\\AM.Infrastructure\\AM.Infrastructure.csproj": {
               "projectPath": "C:\\Users\\Ahmed\\source\\repos\\AhmedDerouiche-4TWIN2\\AM.Infrastructure\\AM.Infrastructure.csproj"
-            },
-            "C:\\Users\\Ahmed\\source\\repos\\AhmedDerouiche-4TWIN2\\AM.UI.Web\\AM.UI.Web.csproj": {
-              "projectPath": "C:\\Users\\Ahmed\\source\\repos\\AhmedDerouiche-4TWIN2\\AM.UI.Web\\AM.UI.Web.csproj"
             }
           }
         }

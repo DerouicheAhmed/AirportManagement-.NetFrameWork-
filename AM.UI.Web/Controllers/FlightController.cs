@@ -1,22 +1,24 @@
-﻿using AM.ApplicationCore.Interfaces;
+﻿using AM.ApplicationCore.Domain;
+using AM.ApplicationCore.Interfaces;
+using AM.ApplicationCore.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
-
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AM.UI.Web.Controllers
 {
-    public class FlightController:Controller
+    public class FlightController : Controller
     {
-        IServiceFlight serviceflight;
-        public FlightController(IServiceFlight serviceflight)
-        {
-            this.serviceflight = serviceflight;
+        IServiceFlight serviceFlight;
+        IServicePlane servicePlane;
+        public FlightController(IServiceFlight serviceFlight,IServicePlane servicePlane) {
+            this.serviceFlight= serviceFlight;
+            this.servicePlane= servicePlane;
         }
         // GET: FlightController
         public ActionResult Index()
         {
-            var flights = serviceflight.GetAll();
+            var flights = this.serviceFlight.GetAll();
             return View(flights);
         }
 
@@ -25,20 +27,43 @@ namespace AM.UI.Web.Controllers
         {
             return View();
         }
-
-        // GET: HomeController1/Create
-        public ActionResult Create()
+        public ActionResult search(string departure, string destination)
         {
+            if (departure != null)
+            {
+                var flights = serviceFlight.GetAll().Where(f => f.Departure.Contains(departure));
+                return View("index", flights);
+
+            }
+            else
+            {
+                var flights = serviceFlight.GetAll().Where(f => f.Destination.Contains(destination));
+                return View("index", flights);
+
+            }
+        }
+
+            // GET: FlightController/Create
+            public ActionResult Create()
+        {
+            ViewBag.Plane = new SelectList(servicePlane.GetAll(), "PlaneId", "Information");
             return View();
         }
 
-        // POST: HomeController1/Create
+        // POST: FlightController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Flight collection, IFormFile PilotFile)
         {
             try
             {
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Upload", PilotFile.FileName);
+                var stream=new FileStream(path,FileMode.Create);
+                PilotFile.CopyTo(stream);
+                collection.Pilot = PilotFile.FileName;
+                serviceFlight.Add(collection);
+                serviceFlight.Commit();
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -47,13 +72,13 @@ namespace AM.UI.Web.Controllers
             }
         }
 
-        // GET: HomeController1/Edit/5
+        // GET: FlightController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: HomeController1/Edit/5
+        // POST: FlightController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -68,13 +93,13 @@ namespace AM.UI.Web.Controllers
             }
         }
 
-        // GET: HomeController1/Delete/5
+        // GET: FlightController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: HomeController1/Delete/5
+        // POST: FlightController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

@@ -31,6 +31,12 @@ namespace AM.ApplicationCore.Domain
             Capacity = capacity;
             ManufactureDate = date;
         }
+        [NotMapped]
+
+        public String Information
+        {
+            get { return PlaneId + "-" + ManufactureDate + "-" + Capacity; }
+        }
         public override string ToString()
         {
             return $"PlaneID: {PlaneId}, Capacity: {Capacity}, ManufactureDate: {ManufactureDate}, PlaneType: {PlaneType}";
